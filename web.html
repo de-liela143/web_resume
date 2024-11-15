@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liela Yvette T. Barnuevo - Web Resume</title>
+    <style>
+        /* Reset and Basic Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ccccff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            background-color: #4a4a8a;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+        }
+
+        .navbar h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #f0e68c;
+            transform: scale(1.05);
+        }
+
+        /* Carousel Styling */
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+            background-color: #eae8ff;
+            border-bottom: 3px solid #4a4a8a;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            width: 60%;
+            overflow: hidden;
+            border-radius: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+			padding-top: 20px;
+			padding-bottom:10px;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            max-width: 40%;
+            border-radius: 15px;
+			padding-left:70px;
+        }
+
+        /* Content Section Styling */
+        .content-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.5s ease;
+            transform: translateY(20px);
+        }
+
+        .content-section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: #4a4a8a;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #4a4a8a;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Enhanced Styling for Lists */
+        .content-section ul {
+            list-style: none;
+            padding-left: 5%;
+        }
+
+        .content-section ul li {
+            padding: 0.3rem 0;
+            line-height: 1.8;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .content-section ul li::before {
+            content: "•";
+            color: #4a4a8a;
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #4a4a8a;
+            color: #ffffff;
+            font-size: 0.9rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+		
+		.quote{
+		      text-align: center;
+			  font-size: 55px;
+			  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			  }
+			  
+			 .school{
+			 padding-left: 10%;
+			 }
+			 
+			 .pic{
+			 border-radius: 8px;
+			 width: 70%;
+             height: auto;
+			 }
+			 
+			 .logo{
+			 border-radius: 8px;
+			 width: 20%;
+             height: auto;
+			 margin-left: 60%;
+			 }
+
+        /* Smooth scrolling for the page */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navbar">
+            <h1>Liela Yvette T. Barnuevo<br>BSIT-2</h1>
+            <ul>
+                <li><a href="#" onclick="showSection('about')">About Me</a></li>
+                <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+                <li><a href="#" onclick="showSection('education')">Education</a></li>
+                <li><a href="#" onclick="showSection('achievements')">Achievements</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carousel for Profile Pictures (Landing Page) -->
+    <section id="carousel-section" class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/462572046_565874572511860_8567508184683664587_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGUn42UtQYW15S0Wj7jNJHzWS2O5dUi_TFZLY7l1SL9MRa7YWDTjFs_6rkfIj6LpEnjhUKaxQRzO5_Y9unDKEiG&_nc_ohc=yEwFG5CqdFQQ7kNvgFvkbwO&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&oh=03_Q7cD1QEpBFCXt1Gu_6JY_5N2gkjZ0AUBh75hyMxR5cKw70dUQQ&oe=675DA292" alt="Profile Picture 1">
+                <img src="https://scontent.fmnl30-1.fna.fbcdn.net/v/t1.15752-9/462559043_1309905563344577_4458259631579797974_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeG7Y0BqZyoBXLewSlyHa77VPxHDUVIf2L0_EcNRUh_YvU2ZDMM0Oael2zNTpiPcp6ylclYhcyGxGBeFX7tCUcWx&_nc_ohc=y0e1I5Q3R-MQ7kNvgE5Ir5n&_nc_zt=23&_nc_ht=scontent.fmnl30-1.fna&oh=03_Q7cD1QF8OGKP0S3k8n6EzJgOvXguRoBUmv5_wAr3C8QNTljEpw&oe=675DBE64" alt="Profile Picture 2">
+                <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/462550593_1272014067275475_3151321788580551135_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGS5rs2wlj2N0dvNK1xf6kym5DhMvMYTtSbkOEy8xhO1GskX1T3Lv2lsJp0NuQAlw-Dh9KBU9gjlu1zQAhqqCQF&_nc_ohc=1N_YzF0aZPUQ7kNvgGjk0H8&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&oh=03_Q7cD1QFGZdGnJykjVsQjq9MXnNGgAhHWIQjLTH0UniYpq78Bbw&oe=675D8DAA" alt="Profile Picture 3">
+                <img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/385526217_1705696663284733_2105201872304592119_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGsV09OiGEIYa1wftINkvmQEtEjQo77NPkS0SNCjvs0-bDtBv_GrwFt7yVtSW_80XjEQjRmIXGC2_sIBtyBt3eI&_nc_ohc=TRe-aBFvZSgQ7kNvgGkO1LU&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&oh=03_Q7cD1QEX8d5bAepCmBMD_rmFDrJ7gQpYiekjpVActdHWAxYg2Q&oe=675DA282" alt="Profile Picture 4">
+                <img src="https://scontent.fmnl30-1.fna.fbcdn.net/v/t1.15752-9/363837433_255227100703964_34472693591325574_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHnGMGhvTrl_kvPbgxtnTgWhO5FIlK1gJCE7kUiUrWAkP7gzGhBvCX3j_GwtzJHL9y5gHLk85a4uTiCGH_aIi2W&_nc_ohc=d1aE2kB1yNgQ7kNvgEB4Rs-&_nc_zt=23&_nc_ht=scontent.fmnl30-1.fna&oh=03_Q7cD1QHVhOTVTWNH6dkEEWlqjLMp6x5Ytu8lDSZYRWg1o6h7kg&oe=675D9B85" alt="Profile Picture 4">
+				<img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/462572090_3983399438559359_6483020050052647837_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFzPD4oGRFAJfLEUktkg4Qsso0Tqv61kyKyjROq_rWTIm0bTKheTzUn-9etJAMa2Jhk5JWQf1ziPbT0Xnx8apVB&_nc_ohc=zUeSZ6IaiGQQ7kNvgGmYrFa&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&oh=03_Q7cD1QH9kLnObaAVL6Qdq1VcEVrNXyK7I23TNxfxhomuglOBkA&oe=675DAA07" alt="Profile Picture 4">
+			    <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t1.15752-9/462548885_881883390736356_3927063566757257621_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHHgWJkv4ovuJZBLL2rWjJ5ahunkL7fRgVqG6eQvt9GBcQF6b28ZkOtkc38IH3o5_2il-zVV5DFBd4JbIBXf628&_nc_ohc=bePzdV2a2qAQ7kNvgFJsCTl&_nc_zt=23&_nc_ht=scontent.fmnl30-3.fna&oh=03_Q7cD1QGGQwZrJpUNqWn1itljsKz32b-_ixeHMc7UHsJ1AOOsZw&oe=675D8C00" alt="Profile Picture 4">
+				
+			</div>
+        </div>
+    </section>
+	<div class="quote">
+     <p>"It's not that we use technology; we live technology." – Godfrey Reggio	</p></div>
+
+    <!-- Content Sections -->
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p><strong>Objective:</strong> Passionate web developer with a strong foundation in coding and design, looking to contribute to building dynamic, high-performance websites and applications at a forward-thinking company.</p>
+        <br>
+		<h3>Personal Information</h3>
+        <ul>
+            <li><strong>🌸Name:&ensp;</strong> Liela Yvette T. Barnuevo</li>
+            <li><strong>🌸Home Address:&ensp;</strong> B70 Milflores St., Taguig</li>
+            <li><strong>🌸Contact No.:&ensp;</strong> 09094680188</li>
+            <li><strong>🌸Date of Birth:&ensp;</strong> 04 September 2004</li>
+            <li><strong>🌸Place of Birth:&ensp;</strong> Baao, Camarines Sur</li>
+            <li><strong>🌸Gender:&ensp;</strong> Female</li>
+            <li><strong>🌸Height:&ensp;</strong> 5'1"</li>
+            <li><strong>🌸Weight:&ensp;</strong> 42 kg</li>
+            <li><strong>🌸Religion:&ensp;</strong> Iglesia ni Cristo</li>
+            <li><strong>🌸Civil Status:&ensp;</strong> Single</li>
+            <li><strong>🌸Citizenship:&ensp;</strong> Filipino</li>
+            <li><strong>🌸Ethnicity:&ensp;</strong> Bicolano</li>
+        </ul>
+    </section>
+
+    <section id="skills" class="content-section">
+	    <h2>⭕Soft Skills</h2>
+		
+		<ul>
+		   <li>Communication</li>
+		   <li>Emotional Intelligence</li>
+		   <li>Decision-Making </li>
+		   <li>Problem-Solving</li>
+		   <li>Adaptability</li>
+		   <li>Attention to Detail</li>
+		   <li>Work Ethic </li></ul>
+		   <br>
+		   
+        <h2>⭕Hard Skills</h2>
+		<p><b>✨Coding:</b></p>
+		<ul>
+		   <li>HTML/CSS</li>
+		   <li>Java</li>
+		   <li>C#</li>
+		   <li>JavaScript</li>
+		   <li>SQL</li></ul>
+		   <br>
+        <p><b>✨Others:</b></p>
+		<ul>
+		   <li>Photo & Video Editing</li>
+		   <li>Canva</li>
+		   <li>Word</li>
+		   <li>Excel</li>
+		   <li>Figma</li></ul>
+        
+    </section>
+
+    <section id="education" class="content-section">
+        <h2>🎓Education</h2>
+        <ul>
+            <li><strong>NEW ERA UNIVERSITY (2024):</strong></li> <div class="school">Bachelor of Science in Information Technology<br>ROTC Corps of Sponsor 2023<br>NEU PEP Squad<br>NEU Chess Club</div><img class="logo" src="https://s.yimg.com/zb/imgv1/49bd6340-f5f0-3590-8393-77edc3cb1789/t_500x300"></img><br>
+            <li><strong>STI College Global City (2023):</strong></li> <div class="school">Information Technology in Mobile App and Web Development<br>With Honors</div><img class="logo" src="https://s.yimg.com/zb/imgv1/994ca581-269a-312d-ba07-af55b4da32f9/t_500x300"></img><br>
+            <li><strong>Benigno Ninoy “Aquino” High School (2021):</strong></li> <div class="school">Programming<br>With Honors</div><img class="logo" src="https://tse1.mm.bing.net/th?id=OIP.n2blK5ORbPREgbxRHw8Q9wHaHZ&pid=Api&P=0&h=180"></img><br>
+        </ul>
+    </section>
+
+    <section id="achievements" class="content-section">
+        <h2>🎖️Achievements</h2>
+        <ul>
+            <li><b>Champion Chess (2023)</b></li><div class="school"> STI College Global City<br> Sportfest</br></br></div>
+            <li><b>1st Place Chess (2023)</b></li><div class="school"> Central Regional<br> Unity Games</br></br></div>
+			<div><center><img class="pic" src="https://scontent.fmnl17-4.fna.fbcdn.net/v/t1.15752-9/462562484_1687012482696872_4591544939021970594_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeG7RMheGv_hDlXorRzdyGASBgr-W7YD7bUGCv5btgPttSPQGnedMmL136q18ggOtR58Uj5G6kqmUcFmxZ5BjGm5&_nc_ohc=gEywvPrKTT4Q7kNvgFbNnTy&_nc_zt=23&_nc_ht=scontent.fmnl17-4.fna&oh=03_Q7cD1QFcfGDn5yCGETvmDilvJSkCw4VdiW5hhRLbq-ALWz-0cQ&oe=675E4D2C"></div><br>
+				<li><b>2nd Place Cheerleading (2024)</b></li><div class="school"> NEU PEP Squad<br> NAASCU </br></div><br>
+			<div><center><img class="pic" src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t1.15752-9/447846224_1430428987602111_2578876203952298549_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEGNSefg1M4iKLQZHm7cJ1mN1QB5fw5SfY3VAHl_DlJ9oJnMonB64tTFKTYuv0sM0VBd2G2sY0vz4nAy0RdRHHA&_nc_ohc=8E7qn2i-AVEQ7kNvgENED3Z&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&oh=03_Q7cD1QERDUPDQk4Ug0uTMULs8gKRVapu8aaCBOMxdPNiv5hI-Q&oe=675E817F"></div><br>
+        </ul>
+    </section>
+
+    <section id="contact" class="content-section">
+        <h2>🌐Contact</h2>
+        <p><strong>👩‍💻Email:</strong> lielayvette609@gmail.com</p>
+        <p><strong>📞Phone:</strong> 09094680188</p>
+        <p><strong>📍Location:</strong> Taguig City</p><br>
+		<h2>📱Socials</h2>
+		<p><strong>🍓Facebook:&ensp;</strong><a href="https://www.facebook.com/profile.php?id=100070292149427">De Liela</a></p>
+        <p><strong>🍓Instagram:&ensp;</strong><a href="https://www.instagram.com/y.vtt_?igsh=dXY4enpoMzBmNmY1">@y.vtt_</a></p>
+        <p><strong>🍓Telegram:&ensp;</strong><a href="https://web.telegram.org/k/#@de_liela">@de_liela</a></p><br>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Liela Yvette T. Barnuevo - All Rights Reserved</p>
+    </footer>
+	
+	<script>
+
+    let currentIndex = 0;
+const carouselImages = document.querySelector('.carousel-slide');
+const images = document.querySelectorAll('.carousel-slide img');
+
+function startCarousel() {
+    setInterval(() => {
+        // Update the current index and ensure the loop effect
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // Apply the transform to move the images
+        carouselImages.style.transition = 'transform 8s ease-in-out'; // Smooth transition
+
+        carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // When the last image is reached, reset the transition to create an infinite loop effect
+        if (currentIndex === images.length - 1) {
+            setTimeout(() => {
+                carouselImages.style.transition = 'none'; // Disable transition
+                carouselImages.style.transform = `translateX(0)`; // Reset to the first image
+            }, 	); // Wait until the last transition finishes
+        }
+
+    }, 3000); // Adjust the interval time to control the speed of transition
+}
+
+startCarousel();
+
+function showSection(sectionId) {
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('show');
+        section.style.display = 'none';
+    });
+
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.style.display = 'block';
+        setTimeout(() => {
+            section.classList.add('show');
+        }, 10);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
+</body>
+</html>
